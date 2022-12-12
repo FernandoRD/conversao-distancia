@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+      
+  cdistancia:
+    image: fernandord/conversao-distancia:v1
+    container_name: cdistancia
+    ports:
+      - 5000:5000
