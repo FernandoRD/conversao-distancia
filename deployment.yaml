@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-convdis
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: convdis
+  template:
+    metadata:
+      labels:
+        app: convdis
+    spec:
+      containers:
+      - name: peso
+        image: fernandord/conversao-distancia:latest
+        resources:
+          limits:
+            memory: "256Mi"
+            cpu: "500m"
+        ports:
+          - containerPort: 80
+            name: porta
+
